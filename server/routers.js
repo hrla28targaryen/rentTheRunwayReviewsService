@@ -2,16 +2,13 @@ const router = require('express').Router();
 const controller = require('./controller.js');
 
 router
-    .route('/shop/designers/:designer/:product')
+    .route('/:designer/:product')
     .get(controller.get)
-    .post(controller.post);
+    .post(controller.post)
+    .put(controller.update);
 
 router
-    .route('/shop/designers/:designer/:product')
-    .put(controller.put);
-
-router
-    .route('/shop/designers/:designer/:product/review-p:page')
-    .put(controller.put);
+    .route('/:designer/:product/review-p:page')
+    .put(controller.update);
 
 module.exports = router;
