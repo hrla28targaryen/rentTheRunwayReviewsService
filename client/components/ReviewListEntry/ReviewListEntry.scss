@@ -1,0 +1,119 @@
+@font-face {
+    font-family: 'EngraversGothic BT';
+    src: url('../../../public/Engravers_Gothic_Regular.otf');
+  }
+
+  @font-face {
+    font-family: 'Proxima Nova Regular';
+    src: url('../../../public/Proxima_Nova_Reg.ttf');
+  }
+
+.reviewlistentryContainer {
+    zoom: 1;
+    background-color: #FFFFFF;
+    border: 1px solid #F4EDE5;
+    width: 100%;
+    height: 392px;
+    margin-bottom: 20px;
+    display: flex;
+
+    .label, .reviewerDetail {
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 2px;
+        line-height: 18px;
+    }
+
+    .reviewerDetail{
+        margin-bottom: 20px;
+    }
+
+    .reviewerInfo {
+        width: 250px;
+        padding: 20px 35px 20px 20px;
+        height: 100%;
+
+        .reviewerName {
+            border-bottom: 1px solid #F4EDE5;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 20px;
+            line-height: 26px;
+            letter-spacing: 0;
+            text-transform: none;
+
+            span {
+                font-style: italic;
+            }
+
+            .topContributor {
+                font-family: EngraversGothic BT, serif;
+                color: #999999;
+                margin: 5px 0 5px 0;
+            }
+        }
+
+        .reviewerDetailLabel {
+            font-family: EngraversGothic BT, serif;
+            width: 140px;
+            display: inline-block;
+            
+        }
+
+        .reviewerDetailValue{
+            font-family: EngraversGothic BT, serif;
+            width: 70px;
+            margin-left: 10px;
+            color: #965E31;
+            display: inline-block;
+        }
+    }
+
+    .reviewContent {
+        zoom: 1;
+        width: 400px;
+        border-left: 1px solid #F4EDE5;
+        padding: 20px 20px 20px 35px;
+        height: 350px;
+
+        .reviewRating {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .reviewDate {
+            display: inline-block;
+            font-family: EngraversGothic BT, serif;
+            color: #707070;
+            margin-left: 25px;
+        }
+
+        .reviewTitle {
+            font-size: 20px;
+            line-height: 26px;
+            letter-spacing: 0;
+            text-transform: none;
+            margin: 20px 0;
+        }
+
+        .reviewBody {
+            font-family: 'Proxima Nova Regular', serif;
+            font-size: 14px;
+            line-height: 18px;
+            margin: 5px 0 15px;
+        }
+
+        .reviewPhotos {
+            cursor: pointer;
+            float: right;
+            margin: 20px;
+            position: relative;
+
+            img {
+                display: block;
+                max-height: 275px;
+                max-width: 183px;
+            }
+        }
+    }
+}

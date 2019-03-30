@@ -1,0 +1,68 @@
+.filterSearch {
+    width: 990px;
+    height: 95px;
+    margin: 0 auto;
+    margin-top: 65px;
+    margin-bottom: 35px;
+    padding: 0 30px;  
+
+    .select, .input {
+        float: left;
+        background: white;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 15px;
+        letter-spacing: 0;
+        text-transform: none;
+        line-height: 30px;
+        padding: 5px 10px;
+        border: 1px solid #DDDDDD;
+        border-radius: 0px;
+    }  
+
+    .input {
+        width: 126px;
+        height: 30px;
+    }
+
+    .select {
+        height: 44px;
+        min-width: 150px;
+        margin-right: 15px;
+        padding-left: 8px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: white url("https://s3.amazonaws.com/hrla28renttherunway/down_arrow.svg") no-repeat right 7px center;
+        background-size: 15px 15px; 
+    }
+
+    .select:focus {
+        border-color: black; 
+    }
+
+    .filterSort {
+        width: 35%;
+        float: left;
+
+        .filterDetailLabel {
+            font-family: EngraversGothic BT, serif;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+            line-height: 12px;
+        }
+    }
+    
+    .matchMySizeFilter {
+        width: 65%;
+        float: left;
+
+        .filterDetailLabel {
+            font-family: EngraversGothic BT, serif;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+            line-height: 12px;
+        }
+    }
+}
+
