@@ -1,0 +1,21 @@
+.starRatingsSprite {
+    background: url('https://s3.amazonaws.com/hrla28renttherunway/stars-border.png') repeat-x;
+    font-size: 0;
+    height: 16px;
+    line-height: 0;
+    overflow: hidden;
+    text-indent: -999em;
+    width: 80px;
+    background-size: contain; 
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+    
+    .starRatingsSpriteRating {
+      background: url('https://s3.amazonaws.com/hrla28renttherunway/star-filled.svg') repeat-x;
+      background-position: 0 100%;
+      float: left;
+      height: 16px;
+      display:block;
+      background-size: contain; 
+    }
+    
+  }

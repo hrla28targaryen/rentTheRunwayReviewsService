@@ -66,6 +66,8 @@ listObjects()
     .then( imgUrlArr => {
         var reviewsArr = [];
         
+        var productIDString = 'HRLA00' + Math.floor(Math.random() * 10);
+
         for(let j = 0; j < 10; j++){
             var obj = {
                 name : NAMES[Math.floor(Math.random()*NAMES.length)],
@@ -86,7 +88,8 @@ listObjects()
                     rating : Math.floor( Math.random() * 6),
                     commentTitle : COMMENTTITLE[Math.floor(Math.random()*COMMENTTITLE.length)],
                     commentBody : COMMENTBODY[Math.floor(Math.random()*COMMENTBODY.length)]
-                }
+                },
+                productID : productIDString
             }; 
 
             var imagesArr = [];
