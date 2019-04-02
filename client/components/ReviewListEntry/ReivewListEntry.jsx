@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import StarRating from '../StarRating/StarRating.jsx';
 import style from './ReviewListEntry.scss';
 
@@ -47,7 +48,7 @@ const ReviewListEntry = (props) => (
                 <StarRating rating={props.review.comment.rating/5*100}/>
             </div>
             <div className={`${style.reviewDate} ${style.label}`}>
-                FEBRUARY 6, 2019
+                {props.review.dateString}
             </div>
             <div className={style.reviewTitle}>
                 {props.review.comment.commentTitle}
@@ -55,14 +56,18 @@ const ReviewListEntry = (props) => (
             <p className={style.reviewBody}>
                 {props.review.comment.commentBody}
             </p>
-            <div className={style.reviewPhotos}>
-                <img src="" />
-                <div className={style.reviewPhotosOverlay}>
-                    <span>View Photos</span>
-                </div>
+        </div>
+        <div className={style.reviewPhotos}>
+            <img src={props.review.image[0]} />
+            <div className={style.reviewPhotosOverlay}>
+                <span>View Photos ({props.review.image.length})</span>
             </div>
         </div>
     </div>
 ); 
+
+ReviewListEntry.propTypes = {
+    review: PropTypes.object,
+  };
 
 export default ReviewListEntry;

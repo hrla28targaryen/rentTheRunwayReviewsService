@@ -1,8 +1,13 @@
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
+
+const config = {
+    useMongoClient : true, 
+    useNewUrlParser: true,
+};
  
-mongoose.connect('mongodb://localhost/renttherunway')
+mongoose.connect('mongodb://localhost/renttherunway', { useNewUrlParser: true })
     .then( () => console.log('Connect to MYSQL Database'))
     .catch( err => console.error('Cannot connect to database'));
 
@@ -27,21 +32,21 @@ const reviewSchema = mongoose.Schema({
         commentBody : { type : String },
     },
     image : [String],
-    productID : { type: String, ref :'productID' }
+    dateString : {type : String},
+    date : { type : Date }
 }, {
     timestamps : { createdAt: "created_at" }
 });
 
-const productSchema = new mongoose.Schema({
+const productSchema = mongoose.Schema({
     productID: { type: String, Unique: true }, //HRLA001 to HRLA100
     productName: { type: String },
     designerName: { type: String },
     facebook: { type: Number },
-    // items: [reservationSchema]
     reviews: [reviewSchema]
    });
 
-const ReviewService = mongoose.model('Reviews', reviewSchema);
+//const ReviewService = mongoose.model('Reviews', reviewSchema);
 const ProductService = mongoose.model('Product', productSchema);
 
-module.exports = ReviewService;
+module.exports = ProductService;

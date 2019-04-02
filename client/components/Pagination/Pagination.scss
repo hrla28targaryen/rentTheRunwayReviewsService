@@ -1,0 +1,56 @@
+.reviewPagination {
+    width: 990px;
+    height: 100%;
+    margin-top: 90px;
+    margin: 0 auto;
+    padding: 0 30px;
+    text-align: right;
+    line-height: 34px;
+}
+
+.paginationDescription {
+    display: inline-block;
+    margin-right: 5px;
+    line-height: 34px;
+}
+
+.paginationNavigation {
+    display: inline-block;
+    text-align: center;
+    font-family: EngraversGothic BT, serif;
+    letter-spacing: 2px;
+    font-size: 14px;
+    line-height: 34px;
+    text-transform: uppercase;
+
+    button {
+        white-space: nowrap;
+        overflow: hidden;
+        vertical-align: bottom;
+        cursor: pointer;
+        display: inline-block;
+        text-indent: -9999em;
+        padding: 0;
+        margin: 0px 2px;
+        color: #333333;
+        position: relative;
+        width: 34px;
+        height: 34px;
+        box-sizing: border-box;
+        border: 1px solid #DDDDDD;
+    }
+
+    .paginationPrev {
+        background: url('https://s3.amazonaws.com/hrla28renttherunway/icons/left-arrow.svg') no-repeat center;
+        background-size: 14px;
+    }
+
+    .paginationNext {
+        background: url('https://s3.amazonaws.com/hrla28renttherunway/icons/right-arrow.svg') no-repeat center;
+        background-size: 14px;
+    }
+
+    .paginationPrev:disabled, .paginationNext:disabled{ 
+        opacity: 0.4;
+    }
+}

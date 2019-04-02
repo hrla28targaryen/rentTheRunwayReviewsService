@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import style from './ReviewList.scss';
 import ReviewListEntry from '../ReviewListEntry/ReivewListEntry.jsx';
 
@@ -13,7 +14,7 @@ class ReviewList extends React.Component {
                 <div className={style.reviewListWrapper}>
                 {
                     this.props.reviews.map( review => {
-                        return <ReviewListEntry review={review} />
+                        return <ReviewListEntry key={review._id} review={review} />
                     })
                 }
                 </div>
@@ -21,5 +22,8 @@ class ReviewList extends React.Component {
         );
     }
 }
+ReviewList.propTypes = {
+    reivews: PropTypes.array
+  };
 
 export default ReviewList;
