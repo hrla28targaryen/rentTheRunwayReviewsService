@@ -1,0 +1,55 @@
+.carouselWrapper {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+
+    .carouselArrowLeft, .carouselArrowRight {
+        background-position: 99.89010989010988% 70.61611374407583%;
+        width: 8px;
+        height: 13px;
+    }
+    
+    .carouselArrowLeft {
+        background: url(https://s3.amazonaws.com/hrla28renttherunway/icons/left-arrow.svg) no-repeat;
+    }
+    
+    .carouselArrowRight {
+        background: url(https://s3.amazonaws.com/hrla28renttherunway/icons/right-arrow.svg) no-repeat;
+    }
+
+    .carouselReviews {
+        position: relative;
+        float: left;
+        width: 315px;
+        height: 80px;
+        clip: auto;
+        overflow: hidden;
+        margin: 0 10px;
+
+        .carouselInner {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+
+            .currentImages {
+
+                .carouseImageWrapper {
+                    display: inline-block;
+                    height: 80px;
+                    cursor: pointer;
+                    
+                    .carouselImage {
+                        display: block;
+                        height: 100%;
+                        width: auto;
+                        border: none;
+                    }
+                }
+
+                .carouseImageWrapper:not(:last-child) {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}

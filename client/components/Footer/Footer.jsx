@@ -42,7 +42,11 @@ const Footer = () => (
                     </ul>
                 </div>
                 <div className={`${style.footerContent} ${style.connectWithFooter}`}>
-                    <div className={style.label}>Rent on the Run</div>
+                    <div className={style.appPromoFooter}>
+                        <div className={style.appFooterIcon}></div>
+                        <div className={style.label}>Rent on the Run</div>
+                        <a href="https://rtr.app.link/dsabSPp3GB" class="standalone">Download</a>
+                    </div>
                     <div className={style.socialLinks}>
                         <div className={style.socialLinksTitle}>
                             <span className={style.label}>Be Social</span>

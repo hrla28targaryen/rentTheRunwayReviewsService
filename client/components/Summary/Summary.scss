@@ -80,16 +80,31 @@
 
     .totalPhotos {
 
-        width: 35%;
+        width: 42%;
         float: left;
+        max-height: 125px; 
 
-        .totalPhotosTitle {
-            font-family: EngraversGothic BT, serif;
-            font-size: 20px;
-            line-height: 26px;
-            letter-spacing: 0;
-            text-transform: none;
-            margin: 20px 0;
+        .totalPhotosDescription{
+            position: relative;
+            vertical-align: middle;
+            height: 125px;
+            margin-right: 15px;
+            display: inline-block;
+
+            .totalPhotosTitle {
+                font-size: 20px;
+                line-height: 26px;
+                letter-spacing: 0;
+                text-transform: none;
+            }
+            .totalPhotosCount {
+                font-family: EngraversGothic BT, serif;
+                text-transform: uppercase;
+                font-size: 12px;
+                letter-spacing: 2px;
+                line-height: 18px;
+                color: #999999;
+            }
         }
     }
 }

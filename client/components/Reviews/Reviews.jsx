@@ -13,6 +13,7 @@ class Reviews extends React.Component {
 
         this.state = {
             reviews: [],
+            imagesGallery: [],
             averageRatings: 0,
             fit: {
                 large: 0,
@@ -76,6 +77,7 @@ class Reviews extends React.Component {
             let smallCt = 0;
             let trueCt = 0;
             let largeCt = 0;
+            let imgArr = [];
             data.data[0].reviews.forEach( review => {
                 totalRatings += review.comment.rating;
                 if (review.purchaseInfo.overAllFit === "SMALL") {
@@ -85,11 +87,16 @@ class Reviews extends React.Component {
                 } else {
                     largeCt++;
                 }
+
+                if(review.image.length > 0){
+                    imgArr = imgArr.concat(review.image);
+                }
             });
             var totalPages = Math.ceil(data.data[0].reviews.length / this.state.pageLimit);
             this.setState(
                 { 
                     reviews: data.data[0].reviews,
+                    imagesGallery: imgArr,
                     averageRatings : totalRatings/(data.data[0].reviews.length), 
                     fit : {
                             large: largeCt,
@@ -97,7 +104,7 @@ class Reviews extends React.Component {
                             small: smallCt,
                         },
                     currentReviews:  data.data[0].reviews.slice(0, this.state.pageLimit),
-                    totalPages: totalPages 
+                    totalPages: totalPages
                 });   
         })
         .catch( err => console.error(err));
@@ -147,9 +154,11 @@ class Reviews extends React.Component {
         return (
             <div className={style.reviewsContainer}>
                 <Summary 
+                    key={this.state.imagesGallery.length}
                     averageRatings={this.state.averageRatings} 
                     fit={this.state.fit} 
-                    numberOfReviews={this.state.reviews.length} />
+                    numberOfReviews={this.state.reviews.length} 
+                    imagesGallery={this.state.imagesGallery} />
                 <div className={style.filterReviewsWrapper}>
                     <FilterSearch 
                         sortByRating={this.sortByRating} 

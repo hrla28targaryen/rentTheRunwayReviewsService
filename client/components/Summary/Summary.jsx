@@ -1,6 +1,7 @@
 import React from 'react';
 import StarRating from '../StarRating/StarRating.jsx';
 import style from './Summary.scss';
+import ImageCarousel from '../ImageCarousel/ImageCarousel.jsx';
 
 class Summary extends React.Component {
     constructor(props) {
@@ -54,7 +55,11 @@ class Summary extends React.Component {
                         </table>
                     </div>
                     <div className={style.totalPhotos}>
-                        <div className={style.totalPhotosTitle}>Photos</div>
+                        <div className={style.totalPhotosDescription}>
+                            <div className={style.totalPhotosTitle}>Photos</div>
+                            <div className={style.totalPhotosCount}>{this.props.imagesGallery.length}</div>
+                        </div>
+                        <ImageCarousel imagesGallery={this.props.imagesGallery}/>
                     </div>
                 </div>
             </div>
