@@ -4,6 +4,28 @@ const combinedLoaders = require('webpack-combine-loaders');
 
 module.exports = {
   entry: __dirname + '/client/index.jsx',
+  // entry: {
+  //   main: path.join(__dirname, 'client/index.jsx'),
+  //   FilterSearch: path.join(__dirname, 'client/components/FilterSearch/FilterSearch.jsx'),
+  //   Reviews: path.join(__dirname, 'client/components/Reviews/Reviews.jsx'),
+  //   ReviewList: path.join(__dirname, 'client/components/ReviewList/ReviewList.jsx'),
+  //   ReviewListEntry: path.join(__dirname, 'client/components/ReviewListEntry/ReviewListEntry.jsx'),
+  //   Pagination: path.join(__dirname, 'client/components/Pagination/Pagination.jsx'),
+  //   ImageCarousel: path.join(__dirname, 'client/components/ImageCarousel/ImageCarousel.jsx'),
+  //   Footer: path.join(__dirname, 'client/components/Footer/Footer.jsx'),
+  //   StarRating: path.join(__dirname, 'client/components/StarRating/StarRating.jsx'),
+  //   Summary: path.join(__dirname, 'client/components/Summary/Summary.jsx'),
+  //   HOC: path.join(__dirname, 'client/components/HOC.jsx')
+  // },
+  output: {
+    path: __dirname + '/dist',
+    filename: 'bundle.js'
+  },
+  // optimization: {
+  //   splitChunks: {
+  //     chunks: 'all'
+  //   },
+  // },
   module: {
     rules: [
       {
@@ -36,11 +58,7 @@ module.exports = {
       },
     ],
   },
-  output: {
-    path: __dirname + '/public',
-    filename: 'app.js',
-  },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
-  }
+    extensions: ['.js', '.jsx', '.json']
+  } 
 };

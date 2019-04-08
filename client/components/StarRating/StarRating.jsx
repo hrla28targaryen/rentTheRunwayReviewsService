@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import style from './StarRating.scss';
 
 const StarRating = (props) => (
@@ -9,5 +10,9 @@ const StarRating = (props) => (
         </span>
     </div>
 );
+
+StarRating.propTypes = {
+    rating: PropTypes.number.isRequired,
+  };
 
 export default StarRating;

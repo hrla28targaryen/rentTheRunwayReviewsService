@@ -1,7 +1,8 @@
 const Reviews = require('../database/index.js');
 
 const getAll = (req, res) => {
-    Reviews.find().sort({date: -1})
+    Reviews.find()
+    .sort('-reviews.date')
     .then( data => res.status(200).send(data))
     .catch( err => console.error('Error'));
 };
@@ -9,6 +10,7 @@ const getAll = (req, res) => {
 const getProductReviews = (req, res) => {
     var { productID } = req.params;
     Reviews.find(req.params)
+    .sort('-reviews.date')
     .then( data => res.status(200).send(data))
     .catch( err => console.error('Error'));
 };

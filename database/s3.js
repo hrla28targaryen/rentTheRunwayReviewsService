@@ -19,8 +19,10 @@ var s3 = new AWS.S3({
     apiVersion: '2006-03-01'
 });
 
-function listObjects() {
-    return s3.listObjects({Bucket : 'hrla28renttherunway'}).promise();
+function listObjects(folder) {
+    return s3.listObjects(
+        {Bucket: 'hrla28renttherunway', Prefix: folder }
+    ).promise();
 }
 
 module.exports = listObjects;
