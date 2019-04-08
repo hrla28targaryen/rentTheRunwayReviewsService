@@ -27,15 +27,15 @@ class Reviews extends React.Component {
         }
         this.fetchData = this.fetchData.bind(this);
         this.fetchDataByID = this.fetchDataByID.bind(this);
-        // this.filterByWomenLikeMe = this.sortByWomenLikeMe.bind(this);
-        // this.sortByFeatured = this.sortByFeatured.bind(this);
+        this.filterByWomenLikeMe = this.filterByWomenLikeMe.bind(this);
+        this.sortByFeatured = this.sortByFeatured.bind(this);
         this.sortByNewest = this.sortByNewest.bind(this);
         this.sortByRating = this.sortByRating.bind(this);
         this.onPageChanged = this.onPageChanged.bind(this);
     }
 
     componentDidMount() {
-        this.fetchDataByID('HRLA078');
+        this.fetchDataByID('HRLA053');
     }
 
     fetchData() {
@@ -111,13 +111,83 @@ class Reviews extends React.Component {
     }
 
     filterByWomenLikeMe(size, height, bustSize, age) {
-        this.sortByNewest();
-    
+        var matchfilterArr = [];
+        var nomatchfilterArr = [];
+        this.state.reviews.map( review => {
+            if(review.purchaseInfo.sizeWorn.includes(size.toString()) ||
+                review.userInfo.height === height || 
+                review.userInfo.bustSize === bustSize ||
+                review.userInfo.age === age.toString() ){
+                matchfilterArr.push(review);
+            } else {
+                nomatchfilterArr.push(review);
+            }   
+        });
+        matchfilterArr.sort( (a,b) => {
+            if( b.date > a.date ) {
+                return 1;
+            } else if ( b.date < a.date ) {
+                return -1;
+            } else  {
+                return 0;
+            }
+        });
+        
+        nomatchfilterArr.sort( (a,b) => {
+            if( b.date > a.date ) {
+                return 1;
+            } else if ( b.date < a.date ) {
+                return -1;
+            } else  {
+                return 0;
+            }
+        });
+
+        this.setState({ reviews: matchfilterArr.concat(nomatchfilterArr) }, () => {
+            this.setState({ 
+                currentReviews:  this.state.reviews.slice(0, this.state.pageLimit),
+                currentPage: 1 
+            });
+        });
     }
     
     //sort by if has images and newest
     sortByFeatured() {
+        var matchfilterArr = [];
+        var nomatchfilterArr = [];
+        this.state.reviews.map( review => {
+            if(review.image.length) {
+                matchfilterArr.push(review);
+            } else {
+                nomatchfilterArr.push(review);
+            }   
+        });
+        matchfilterArr.sort( (a,b) => {
+            if( b.date > a.date ) {
+                return 1;
+            } else if ( b.date < a.date ) {
+                return -1;
+            } else  {
+                return 0;
+            }
+        });
         
+        nomatchfilterArr.sort( (a,b) => {
+            if( b.date > a.date ) {
+                return 1;
+            } else if ( b.date < a.date ) {
+                return -1;
+            } else  {
+                return 0;
+            }
+        });
+
+        this.setState({ reviews: matchfilterArr.concat(nomatchfilterArr) }, () => {
+            this.setState({ 
+                currentReviews:  this.state.reviews.slice(0, this.state.pageLimit),
+                currentPage: 1 
+            });
+        });
     }
 
     sortByRating() {
@@ -125,7 +195,12 @@ class Reviews extends React.Component {
         reviewsArr.sort( (a,b) => {
             return b.comment.rating - a.comment.rating;
         });
-        this.setState({ reviews : reviewsArr });
+        this.setState({ reviews : reviewsArr }, () => {
+            this.setState({ 
+                currentReviews:  this.state.reviews.slice(0, this.state.pageLimit),
+                currentPage: 1 
+             });
+        });
     }
 
     sortByNewest() {
@@ -139,7 +214,12 @@ class Reviews extends React.Component {
                 return 0;
             }
         });
-        this.setState({ reviews : reviewsArr });
+        this.setState({ reviews : reviewsArr }, () => {
+            this.setState({ 
+                currentReviews:  this.state.reviews.slice(0, this.state.pageLimit),
+                currentPage: 1 
+             });
+        });
     }
 
     onPageChanged( data ) {
@@ -161,6 +241,8 @@ class Reviews extends React.Component {
                     imagesGallery={this.state.imagesGallery} />
                 <div className={style.filterReviewsWrapper}>
                     <FilterSearch 
+                        filterByWomenLikeMe={this.filterByWomenLikeMe}
+                        sortByFeatured={this.sortByFeatured}
                         sortByRating={this.sortByRating} 
                         sortByNewest={this.sortByNewest} />
                     <ReviewList 

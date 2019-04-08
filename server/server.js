@@ -10,10 +10,12 @@ const port = process.env.PORT || 3002;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : true }));
 app.use(morgan('dev'));
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '../dist')));
 
 app.use('/api/shop/designers', routes);
 
 app.listen(port, () => {
   console.log(`server running at: http://localhost:${port}`);
 });
+
+module.exports = app;

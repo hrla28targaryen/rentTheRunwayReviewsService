@@ -29,6 +29,7 @@ class ImageCarousel extends React.Component {
 
     gotoImageSet(id) {
       const currentIndex = Math.max(0, Math.min(id, this.state.totalImageSet));
+      console.log(currentIndex);
       this.setState({ currentImageSet : currentIndex }, () => {
         this.onImageChanged();
       })
@@ -44,7 +45,7 @@ class ImageCarousel extends React.Component {
       this.gotoImageSet(this.state.currentImageSet+1);
     }
     
-    onImageChanged( ) {   
+    onImageChanged() {   
         const offset = (this.state.currentImageSet - 1) * this.state.imagesLimit;
         const currentImages = this.state.imagesGallery.slice(offset, offset + this.state.imagesLimit);   
         this.setState({ currentImages });
@@ -53,14 +54,14 @@ class ImageCarousel extends React.Component {
     render() {
         return (
             <div className={style.carouselWrapper}>
-                { (this.state.currentImageSet !== 1) && <div className={style.carouselArrowLeft}></div> }
+                { (this.state.currentImageSet !== 1) && (<div className={style.prev}><div className={style.carouselArrowLeft} onClick={this.handleMoveLeft}></div></div>) }
                 <div className={style.carouselReviews}>
                     <div className={style.carouselInner}>
                         <div className={style.currentImages}>
                             {
-                                this.state.currentImages.map( image => {
+                                this.state.currentImages.map( (image, i) => {
                                     return (
-                                        <div className={style.carouseImageWrapper}>
+                                        <div key={i} className={style.carouseImageWrapper}>
                                             <img className={style.carouselImage} src={image} />
                                         </div>
                                     );
@@ -69,7 +70,7 @@ class ImageCarousel extends React.Component {
                         </div>
                     </div>
                 </div>
-                { (this.state.currentImageSet !== this.state.totalImageSet) && <div className={style.carouselArrowRight}></div> }
+                { (this.state.currentImageSet !== this.state.totalImageSet) && (<div className={style.next}><div className={style.carouselArrowRight} onClick={this.handleMoveRight}></div></div>) }
             </div>
         );
     }

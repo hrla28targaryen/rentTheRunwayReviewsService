@@ -45,17 +45,17 @@ const Footer = () => (
                     <div className={style.appPromoFooter}>
                         <div className={style.appFooterIcon}></div>
                         <div className={style.label}>Rent on the Run</div>
-                        <a href="https://rtr.app.link/dsabSPp3GB" class="standalone">Download</a>
+                        <a href="https://rtr.app.link/dsabSPp3GB" className="standalone">Download</a>
                     </div>
                     <div className={style.socialLinks}>
                         <div className={style.socialLinksTitle}>
                             <span className={style.label}>Be Social</span>
                         </div>
                         <div className={style.socialLinksTags}>
-                            <a href=""><i class="fab fa-facebook-f fa-lg"></i></a>
-                            <a href=""><i class="fab fa-instagram fa-lg"></i></a>
-                            <a href=""><i class="fab fa-pinterest-p fa-lg"></i></a>
-                            <a href=""><i class="fab fa-twitter fa-lg"></i></a>
+                            <a href="https://www.facebook.com/RentTheRunway" target="_blank" className={style.facebook}></a>
+                            <a href="http://www.instagram.com/renttherunway" target="_blank" className={style.instagram}></a>
+                            <a href="http://www.pinterest.com/renttherunway/" target="_blank" className={style.pinterest}></a>
+                            <a href="https://twitter.com/RenttheRunway" target="_blank" className={style.twitter}></a>
                         </div>
                     </div>
                 </div>

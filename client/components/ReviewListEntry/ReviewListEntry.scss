@@ -1,12 +1,12 @@
 @font-face {
     font-family: 'EngraversGothic BT';
-    src: url('../../../public/Engravers_Gothic_Regular.otf');
-  }
+    src: url('../../../dist/Engravers_Gothic_Regular.otf');
+}
 
-  @font-face {
+@font-face {
     font-family: 'Proxima Nova Regular';
-    src: url('../../../public/Proxima_Nova_Reg.ttf');
-  }
+    src: url('../../../dist/Proxima_Nova_Reg.ttf');
+}
 
 .reviewlistentryContainer {
     zoom: 1;

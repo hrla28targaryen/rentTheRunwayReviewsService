@@ -39,7 +39,7 @@ const reviewSchema = mongoose.Schema({
 });
 
 const productSchema = mongoose.Schema({
-    productID: { type: String, Unique: true }, //HRLA001 to HRLA100
+    productID: { type: String, Unique: true },
     productName: { type: String },
     designerName: { type: String },
     facebook: { type: Number },

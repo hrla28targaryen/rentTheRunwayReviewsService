@@ -41,10 +41,31 @@
             justify-content: space-around;
             padding-bottom: 60px;
 
+            .footerContent {
+                vertical-align: top;
+                display: inline-block;
+                margin-top: 10px;
+                margin-left: 25px;
+                margin-right: 20px;
+                width: 190px;
+                padding-bottom: 0;
+            }
+
             .appPromoFooter {
+                padding-bottom: 50px;
 
                 .appFooterIcon {
+                    background: url(https://s3.amazonaws.com/hrla28renttherunway/icons/mobile-phone.svg) no-repeat;
+                    background-size: contain;
+                    width: 35px;
+                    height: 62px;
+                    float: left;
+                    margin-right: 8px;
+                }
 
+                .label {
+                    text-align: left;
+                    display: block;
                 }
 
                 a {
@@ -56,20 +77,43 @@
                     line-height: 100%;
                     padding-bottom: 2px;
                     border-bottom: 1px solid black;
+                    display: inline-block;
                 }
             }
 
             .socialLinks {
                 .socialLinksTitle {
                     display: block;
-                    margin-bottom: 10px;
                 }
 
                 .socialLinksTags{
                     display: block;
 
-                    a {
+                    .facebook, .instagram, .pinterest, .twitter {
                         margin: 0px 5px;
+                        width: 21px;
+                        height: 36px;
+                        display: inline-block;
+                    }
+
+                    .facebook {
+                        background: url(https://s3.amazonaws.com/hrla28renttherunway/icons/facebook.svg) no-repeat center;
+                        background-size: contain;
+                    }
+
+                    .instagram {
+                        background: url(https://s3.amazonaws.com/hrla28renttherunway/icons/instagram.svg) no-repeat center;
+                        background-size: contain;
+                    }
+
+                    .pinterest {
+                        background: url(https://s3.amazonaws.com/hrla28renttherunway/icons/pinterest.svg) no-repeat center;
+                        background-size: contain;
+                    }
+
+                    .twitter {
+                        background: url(https://s3.amazonaws.com/hrla28renttherunway/icons/twitter.svg) no-repeat center;
+                        background-size: contain;
                     }
                 }
             }
