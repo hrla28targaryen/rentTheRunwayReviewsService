@@ -4,7 +4,6 @@
     margin: 0 auto;
     margin-top: 65px;
     margin-bottom: 35px;
-    padding: 0 30px;  
 
     .select, .input {
         float: left;
@@ -17,11 +16,12 @@
         padding: 5px 10px;
         border: 1px solid #DDDDDD;
         border-radius: 0px;
+        outline: 0;
     }  
 
     .input {
         width: 126px;
-        height: 30px;
+        height: auto;
     }
 
     .select {

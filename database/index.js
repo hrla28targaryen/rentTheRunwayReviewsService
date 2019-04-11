@@ -7,7 +7,7 @@ const config = {
     useNewUrlParser: true,
 };
  
-mongoose.connect('mongodb://localhost/renttherunway', { useNewUrlParser: true })
+mongoose.connect('mongodb://localhost/renttherunwayreviews', { useNewUrlParser: true })
     .then( () => console.log('Connect to MYSQL Database'))
     .catch( err => console.error('Cannot connect to database'));
 

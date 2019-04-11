@@ -9,6 +9,7 @@
 }
 
 .reviewlistentryContainer {
+    font-family: 'Times New Roman', Times, serif;
     zoom: 1;
     background-color: #FFFFFF;
     border: 1px solid #F4EDE5;
@@ -29,7 +30,7 @@
     }
 
     .reviewerInfo {
-        width: 250px;
+        width: 290px;
         padding: 20px 35px 20px 20px;
         height: 100%;
 
@@ -71,7 +72,7 @@
 
     .reviewContent {
         zoom: 1;
-        width: 400px;
+        width: 490px;
         border-left: 1px solid #F4EDE5;
         padding: 20px 20px 20px 35px;
         height: 350px;
@@ -107,26 +108,26 @@
     .reviewPhotos {
         cursor: pointer;
         margin: 20px;
+        float: right;
         position: relative;
         overflow: hidden;
+        max-height: 230px;
 
         img {
-            width: 100%;
             display: block;
-            max-height: 275px;
+            max-height: 230px;
             max-width: 183px;
             margin: 0 auto;
+            overflow:hidden;
         }
 
         .reviewPhotosOverlay {
             position: absolute;
-            left: 0;
             top: 0;
-            bottom: 0;
-            right: 0;
+            left: 0;
             opacity: 0;
             width: 100%;
-            height: 99%;
+            height: 100%;
             background: rgba(51,51,51,0.4);
             color: #FFFFFF;
             text-align: center;

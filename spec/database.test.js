@@ -120,7 +120,7 @@ describe('Reviews API', function() {
 
   before(function (done) {
     if (mongoose.connection.db) {
-      return done();
+      done();
     }
     mongoose.connect(dbURI, done);
   });
@@ -138,13 +138,10 @@ describe('Reviews API', function() {
   });
 
   describe('GET /specific product id', function() {
-    it('should fetch a created user', function(done) {
-        request(app).get(`/api/shop/designers/HRLA078`)
-            .expect(200)
-            .expect(function(res) {
-              expect(getBody(res)[0].reviews.length).to.equal(3);
-            })
-            .end(done)
+    it('should fetch a created user', async function(done) {
+        const response = await request(app).get(`/api/shop/designers/HRLA078`)
+        expect(response.body[0].reviews.length).to.equal(3);
+        expect(response.statusCode).toBe(200);
     })
   });
 });
