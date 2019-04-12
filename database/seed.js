@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const moment = require('moment');
-var async = require('asyncawait/async');
-var await = require('asyncawait/await');
+const async = require('async');
 const Product = require('./index.js');
 const listObjects = require('./s3.js');
 
@@ -85,7 +84,7 @@ const asyncProcess = (i) => {
     let designerName = `${designerPool[Math.floor(Math.random() * designerPool.length)]}`;
     let facebook = Math.floor(Math.random() * 1000);
 
-    await (listObjects(productName.split(' ')[1])
+    listObjects(productName.split(' ')[1])
         .then( data => {
             let imageKeyArr = [];
             for (let k = 0; k < data.Contents.length; k++) {
@@ -164,18 +163,17 @@ const asyncProcess = (i) => {
                 .catch( err => console.log('Didnt create anything', err));
         })
         .catch( err => console.log('Could not access s3 bucket & no data was added to database', err))
-    );
 };
 
-const seedFunction = async (() => {
+function seedFunction() {
 
-    for(let i = 0; i< 100; i++){
-        await (asyncProcess(i));
-    }
+    async.times(100,  function(n, next) {
+        asyncProcess(n);
+    });
 
     console.log('Database seeded!');
     mongoose.connection.close();
-});
+};
 
 seedFunction();
 
