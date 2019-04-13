@@ -3,19 +3,13 @@ import { expect } from 'chai';
 import { shallow, mount, render } from 'enzyme';
 import spy from 'sinon';
 
-import Reviews from './Reviews.jsx';
+import Reviews from '../Reviews/Reviews.jsx';
 import Summary from '../Summary/Summary.jsx';
 import FilterSearch from '../FilterSearch/FilterSearch.jsx';
 import ReviewsList from '../ReviewList/ReviewList.jsx';
 import Pagination from '../Pagination/Pagination.jsx';
 
-spy(Reviews.prototype, 'componentDidMount');
-
 describe('Reviews test', () => {
-  it('calls componentDidMount', () => {
-      const wrapper = mount(<Reviews />);
-      expect(Reviews.prototype.componentDidMount).to.have.property('callCount', 1);
-    });
 
   it('renders <Summary /> components', () => {
     const wrapper = shallow(<Reviews />);

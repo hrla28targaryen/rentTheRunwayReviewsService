@@ -29,7 +29,6 @@ class ImageCarousel extends React.Component {
 
     gotoImageSet(id) {
       const currentIndex = Math.max(0, Math.min(id, this.state.totalImageSet));
-      console.log(currentIndex);
       this.setState({ currentImageSet : currentIndex }, () => {
         this.onImageChanged();
       })

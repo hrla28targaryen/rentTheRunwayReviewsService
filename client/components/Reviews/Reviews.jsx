@@ -39,7 +39,7 @@ class Reviews extends React.Component {
     }
 
     fetchData() {
-        axios.get('/api/shop/designers')
+        axios.get('/api/reviews')
         .then( data => {
             let totalRatings = 0;
             let smallCt = 0;
@@ -71,7 +71,7 @@ class Reviews extends React.Component {
     }
 
     fetchDataByID(id) {
-        axios.get(`/api/shop/designers/${id}`)
+        axios.get(`/api/reviews/${id}`)
         .then( data => {
             let totalRatings = 0;
             let smallCt = 0;
