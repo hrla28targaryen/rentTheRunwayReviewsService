@@ -167,12 +167,12 @@ const asyncProcess = (i) => {
 
 function seedFunction() {
 
-    async.times(100,  function(n, next) {
-        asyncProcess(n);
-    });
-
-    console.log('Database seeded!');
-    mongoose.connection.close();
+    for(let i = 0; i < 100; i++) {
+        setTimeout(() => {
+            asyncProcess(i);
+          }, 2000);
+        
+    };
 };
 
 seedFunction();
