@@ -55,7 +55,7 @@ const COMMENTBODY = [
     'Fit is comfortable, fabric is not too hot, I was able to wear in Texas mid May for work.'
 ];
 
-const s3url = 'https://s3.amazonaws.com/hrla28renttherunway/';
+const s3url = 'https://s3.amazonaws.com/renttherunwayhrla28/';
 
 const designerPool = [
     'Alexander McQueen', 'Betsey Johnson', 'Emilio Pucci', 'Miuccia Prada', 'Riccardo Tisci', 'Le Corbusier', 'Coco Chanel'

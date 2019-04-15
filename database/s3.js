@@ -21,7 +21,7 @@ var s3 = new AWS.S3({
 
 function listObjects(folder) {
     return s3.listObjects(
-        {Bucket: 'hrla28renttherunway', Prefix: folder }
+        {Bucket: 'renttherunwayhrla28', Prefix: folder }
     ).promise();
 }
 

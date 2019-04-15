@@ -35,7 +35,7 @@ class Reviews extends React.Component {
     }
 
     componentDidMount() {
-        this.fetchDataByID('HRLA053');
+        this.fetchDataByID();
     }
 
     fetchData() {
@@ -70,8 +70,17 @@ class Reviews extends React.Component {
         .catch( err => console.error(err));
     }
 
-    fetchDataByID(id) {
-        axios.get(`/api/reviews/${id}`)
+    fetchDataByID() {
+        let rand = `HRLA`;
+        var i = Math.floor(Math.random() * 100);
+        if (i.toString().length === 1) {
+        rand += '00' + i.toString();
+        } else if (i.toString().length === 2) {
+        rand += '0' + i.toString();
+        } else if (i.toString().length === 3) {
+        rand += i.toString();
+        }
+        axios.get(`/api/reviews/${rand}`)
         .then( data => {
             let totalRatings = 0;
             let smallCt = 0;
